@@ -1,0 +1,462 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package criminalrecordsystem;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author HP
+ */
+public class FIRComplaintInfo extends javax.swing.JFrame {
+
+    Connection conn;
+    PreparedStatement pst, pst2;
+    ResultSet rs, rs2;
+    /**
+     * Creates new form ComplaintInfo
+     */
+
+    String crimeid;
+    String firid, person_id;
+
+    public FIRComplaintInfo() throws SQLException {
+        initComponents();
+        scaleimage();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        Connect();
+
+    }
+
+    FIRComplaintInfo(int cid, int fid) throws SQLException {
+        initComponents();
+        scaleimage();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        Connect();
+        crimeid = Integer.toString(cid);
+        firid = Integer.toString(fid);
+    }
+
+    public void Connect() throws SQLException {
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orclpdb", "PoliceRecord", "mypass");
+
+            if (conn == null) {
+                System.out.println("unable to connect w db");
+
+            }
+            System.out.println("connected w db");
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(FIRComplaintInfo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void scaleimage() {
+//        ImageIcon icon1=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\editprofile.jpg");
+//        ImageIcon icon2=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\fir form.png");
+//        ImageIcon icon3=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\firRecord.png");
+//        ImageIcon icon4=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\criminalrecord.png");
+//        ImageIcon icon5=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\crimestatistics.png");
+//        ImageIcon icon6=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\police_badge_PNG72.png");
+//        
+//       //edit profile icon
+//        Image img1=icon1.getImage();
+//        Image imgscale1=img1.getScaledInstance(jLabel17.getWidth(), jLabel17.getHeight(), Image.SCALE_SMOOTH);
+//        ImageIcon scaledImage1 = new ImageIcon(imgscale1);
+//        jLabel17.setIcon(scaledImage1);
+//        //fir form image
+//        Image img2=icon2.getImage();
+//        Image imgscale2=img2.getScaledInstance(jLabel18.getWidth(), jLabel18.getHeight(), Image.SCALE_SMOOTH);
+//        ImageIcon scaledImage2 = new ImageIcon(imgscale2);
+//        jLabel18.setIcon(scaledImage2);
+        //fir record
+//        Image img3=icon3.getImage();
+//        Image imgscale3=img3.getScaledInstance(jLabel19.getWidth(), jLabel19.getHeight(), Image.SCALE_SMOOTH);
+//        ImageIcon scaledImage3 = new ImageIcon(imgscale3);
+//        jLabel19.setIcon(scaledImage3);
+//        //criminal record
+//        Image img4=icon4.getImage();
+//        Image imgscale4=img4.getScaledInstance(jLabel20.getWidth(), jLabel20.getHeight(), Image.SCALE_SMOOTH);
+//        ImageIcon scaledImage4 = new ImageIcon(imgscale4);
+//        jLabel20.setIcon(scaledImage4);
+//        //criminal statistics
+//        Image img5=icon5.getImage();
+//        Image imgscale5=img5.getScaledInstance(jLabel21.getWidth(), jLabel21.getHeight(), Image.SCALE_SMOOTH);
+//        ImageIcon scaledImage5 = new ImageIcon(imgscale5);
+//        jLabel21.setIcon(scaledImage5);
+//        // police logo
+//         Image img6=icon6.getImage();
+//        Image imgscale6=img6.getScaledInstance(jLabel16.getWidth(), jLabel16.getHeight(), Image.SCALE_SMOOTH);
+//        ImageIcon scaledImage6 = new ImageIcon(imgscale6);
+//        jLabel16.setIcon(scaledImage6);
+//        //logout
+//        ImageIcon icon90=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\logout.png");
+//        Image img90=icon90.getImage();
+//        Image imgscale90=img90.getScaledInstance(jLabel57.getWidth(), jLabel57.getHeight(), Image.SCALE_SMOOTH);
+//        ImageIcon scaledImage90 = new ImageIcon(imgscale90);
+//        jLabel57.setIcon(scaledImage90);
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        ComplaintFather = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        ComplaintCNIC = new javax.swing.JTextArea();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        ComplaintAge = new javax.swing.JTextArea();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        ComplaintPhone = new javax.swing.JTextArea();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        ComplaintAddress = new javax.swing.JTextArea();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        ComplainerName = new javax.swing.JTextArea();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        ComplaintNationality = new javax.swing.JTextArea();
+        SaveComplaintInfo = new javax.swing.JButton();
+        AnyVictims = new javax.swing.JCheckBox();
+        back = new javax.swing.JButton();
+        genderdropdown = new javax.swing.JComboBox<>();
+        province = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(700, 710));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(578, 670));
+        jPanel1.setMinimumSize(new java.awt.Dimension(578, 670));
+        jPanel1.setPreferredSize(new java.awt.Dimension(578, 670));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane7.setEnabled(false);
+        jScrollPane7.setWheelScrollingEnabled(false);
+
+        ComplaintFather.setColumns(20);
+        ComplaintFather.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ComplaintFather.setRows(5);
+        jScrollPane7.setViewportView(ComplaintFather);
+
+        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 240, 30));
+
+        jScrollPane8.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane8.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane8.setEnabled(false);
+        jScrollPane8.setWheelScrollingEnabled(false);
+
+        ComplaintCNIC.setColumns(20);
+        ComplaintCNIC.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ComplaintCNIC.setRows(5);
+        ComplaintCNIC.setText("Enter 13 digits only. Do not add dashes.");
+        jScrollPane8.setViewportView(ComplaintCNIC);
+
+        jPanel1.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 240, 30));
+
+        jScrollPane10.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane10.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane10.setEnabled(false);
+        jScrollPane10.setWheelScrollingEnabled(false);
+
+        ComplaintAge.setColumns(20);
+        ComplaintAge.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ComplaintAge.setRows(5);
+        jScrollPane10.setViewportView(ComplaintAge);
+
+        jPanel1.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 240, 30));
+
+        jScrollPane11.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane11.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane11.setEnabled(false);
+        jScrollPane11.setWheelScrollingEnabled(false);
+
+        ComplaintPhone.setColumns(20);
+        ComplaintPhone.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ComplaintPhone.setRows(5);
+        jScrollPane11.setViewportView(ComplaintPhone);
+
+        jPanel1.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 240, 20));
+
+        jScrollPane12.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane12.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane12.setEnabled(false);
+        jScrollPane12.setWheelScrollingEnabled(false);
+
+        ComplaintAddress.setColumns(20);
+        ComplaintAddress.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ComplaintAddress.setRows(5);
+        jScrollPane12.setViewportView(ComplaintAddress);
+
+        jPanel1.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 240, 30));
+
+        jScrollPane15.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane15.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane15.setEnabled(false);
+        jScrollPane15.setWheelScrollingEnabled(false);
+
+        ComplainerName.setColumns(20);
+        ComplainerName.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ComplainerName.setRows(5);
+        jScrollPane15.setViewportView(ComplainerName);
+
+        jPanel1.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 240, 30));
+
+        jScrollPane16.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane16.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane16.setEnabled(false);
+        jScrollPane16.setWheelScrollingEnabled(false);
+
+        ComplaintNationality.setColumns(20);
+        ComplaintNationality.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ComplaintNationality.setRows(5);
+        jScrollPane16.setViewportView(ComplaintNationality);
+
+        jPanel1.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 240, 30));
+
+        SaveComplaintInfo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        SaveComplaintInfo.setBorderPainted(false);
+        SaveComplaintInfo.setContentAreaFilled(false);
+        SaveComplaintInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveComplaintInfoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SaveComplaintInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 590, 130, 60));
+
+        AnyVictims.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        AnyVictims.setText("Victim?");
+        AnyVictims.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AnyVictimsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AnyVictims, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 570, -1, -1));
+
+        back.setBackground(new java.awt.Color(255, 255, 255));
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        back.setBorderPainted(false);
+        back.setContentAreaFilled(false);
+        back.setOpaque(true);
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
+
+        genderdropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        jPanel1.add(genderdropdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 50, 30));
+
+        province.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sindh", "Balochistan", "KPK", "Punjab" }));
+        province.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                provinceActionPerformed(evt);
+            }
+        });
+        jPanel1.add(province, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, 130, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/ComplainerInfo.PNG"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 590, 670));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 670));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void AnyVictimsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnyVictimsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AnyVictimsActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+
+        try {
+            this.toBack();
+            this.setVisible(false);
+
+            new FIRform().toFront();
+        } catch (SQLException ex) {
+            Logger.getLogger(FIRComplaintInfo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_backActionPerformed
+
+
+    private void SaveComplaintInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveComplaintInfoActionPerformed
+        try {
+            // TODO add your handling code here:
+            String Name = ComplainerName.getText();
+            String CNIC = ComplaintCNIC.getText();
+            String Age = ComplaintAge.getText();
+            String Address = ComplaintAddress.getText();
+            String Province = province.getSelectedItem().toString();
+            String FatherName = ComplaintFather.getText();
+            String Gender = genderdropdown.getSelectedItem().toString();
+            String Phoneno = ComplaintPhone.getText();
+            String Nationality = ComplaintNationality.getText();
+
+            pst = conn.prepareStatement("insert into person(Person_name,Person_gender,Person_age,Person_CNIC,Person_phoneno,Person_address,Person_fathername,person_nationality,Person_Province) values(?,?,?,?,?,?,?,?,?)");
+            pst.setString(1, Name);
+            pst.setString(2, Gender);
+            pst.setString(3, Age);
+            pst.setString(4, CNIC);
+            pst.setString(5, Phoneno);
+            pst.setString(6, Address);
+            pst.setString(7, FatherName);
+            pst.setString(8, Nationality);
+            pst.setString(9, Province);
+
+            int k = pst.executeUpdate();
+
+            if (k == 1) {
+                JOptionPane.showMessageDialog(this, "Record Added");
+                pst = conn.prepareStatement("select MAX(person_id) from Person");
+
+                rs = pst.executeQuery();
+
+                if (rs.next() == true) {
+                    person_id = rs.getString(1);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Record failed");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(FIRComplaintInfo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        if (AnyVictims.isSelected()) {
+            try {
+
+                pst2 = conn.prepareStatement("insert into person_involvement(Person_ID,Crime_ID,Complaint,Victim,Criminal,PI_Date,FIR_ID) values(?,?,?,?,?,sysdate,?)");
+                pst2.setString(1, person_id);
+                pst2.setString(2, crimeid);
+                pst2.setString(3, "1");
+                pst2.setString(4, "1");
+                pst2.setString(5, "0");
+                pst2.setString(6, firid);
+
+                int s = pst2.executeUpdate();
+
+                if (s == 1) {
+                    JOptionPane.showMessageDialog(this, "Record Added");
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Record failed");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(FIRComplaintInfo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        try {
+            this.toBack();
+            this.setVisible(false);
+
+            new FIRform().toFront();
+        } catch (SQLException ex) {
+            Logger.getLogger(FIRComplaintInfo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_SaveComplaintInfoActionPerformed
+
+    private void provinceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_provinceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_provinceActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FIRComplaintInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FIRComplaintInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FIRComplaintInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FIRComplaintInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new FIRComplaintInfo().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(FIRComplaintInfo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox AnyVictims;
+    private javax.swing.JTextArea ComplainerName;
+    private javax.swing.JTextArea ComplaintAddress;
+    private javax.swing.JTextArea ComplaintAge;
+    private javax.swing.JTextArea ComplaintCNIC;
+    private javax.swing.JTextArea ComplaintFather;
+    private javax.swing.JTextArea ComplaintNationality;
+    private javax.swing.JTextArea ComplaintPhone;
+    private javax.swing.JButton SaveComplaintInfo;
+    private javax.swing.JButton back;
+    private javax.swing.JComboBox<String> genderdropdown;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JComboBox<String> province;
+    // End of variables declaration//GEN-END:variables
+
+}
