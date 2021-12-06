@@ -92,46 +92,28 @@ public class PunjabCriminals extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(java.awt.Color.lightGray);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/police_badge_PNG72.png"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 100, 90));
-
-        back.setBackground(java.awt.Color.lightGray);
+        back.setBackground(new java.awt.Color(255, 255, 255));
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         back.setBorderPainted(false);
         back.setContentAreaFilled(false);
-        back.setMaximumSize(new java.awt.Dimension(130, 116));
-        back.setMinimumSize(new java.awt.Dimension(130, 116));
         back.setOpaque(true);
-        back.setPreferredSize(new java.awt.Dimension(130, 116));
-        back.setRolloverEnabled(false);
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel2.setText("National Criminal Record");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel3.setText("Punjab Criminals");
-        jLabel3.setToolTipText("");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -144,7 +126,11 @@ public class PunjabCriminals extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 980, 400));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 980, 400));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/PunjabCriminals.PNG"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 1180, 650));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 650));
 
@@ -199,9 +185,7 @@ public class PunjabCriminals extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

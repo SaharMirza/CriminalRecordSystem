@@ -93,22 +93,19 @@ public class BalochistanCriminals extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 650));
 
-        jPanel1.setBackground(java.awt.Color.lightGray);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(1300, 650));
         jPanel1.setMinimumSize(new java.awt.Dimension(1300, 650));
         jPanel1.setPreferredSize(new java.awt.Dimension(1300, 650));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        back.setBackground(java.awt.Color.lightGray);
+        back.setBackground(new java.awt.Color(255, 255, 255));
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         back.setBorderPainted(false);
         back.setContentAreaFilled(false);
@@ -119,16 +116,7 @@ public class BalochistanCriminals extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel2.setText("National Criminal Record");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel3.setText("Balochistan Criminals");
-        jLabel3.setToolTipText("");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 90, 80));
 
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -141,10 +129,13 @@ public class BalochistanCriminals extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 980, 400));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 980, 400));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/police_badge_PNG72.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/BalocistanCriminals.PNG"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 1280, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,9 +204,7 @@ public class BalochistanCriminals extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

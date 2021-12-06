@@ -24,7 +24,7 @@ public class CriminalLog extends javax.swing.JFrame {
     public CriminalLog() {
         initComponents();
         scaleimage();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     public void scaleimage() {
@@ -79,59 +79,24 @@ public class CriminalLog extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         punjab = new javax.swing.JButton();
         sindh1 = new javax.swing.JButton();
         balochistan = new javax.swing.JButton();
         kpk = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(java.awt.Color.lightGray);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/police_badge_PNG72.png"))); // NOI18N
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 100, 90));
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 45)); // NOI18N
-        jLabel2.setText("Criminal Log");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel3.setText("National Criminal Record");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Balochistan Criminals");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel4.setText("Sindh Criminals");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel5.setText("Punjab Criminals");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, -1, -1));
-
-        back.setBackground(java.awt.Color.lightGray);
-        back.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        back.setForeground(new java.awt.Color(187, 187, 187));
+        back.setBackground(new java.awt.Color(255, 255, 255));
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         back.setBorderPainted(false);
         back.setContentAreaFilled(false);
-        back.setMaximumSize(new java.awt.Dimension(130, 116));
-        back.setMinimumSize(new java.awt.Dimension(130, 116));
         back.setOpaque(true);
-        back.setPreferredSize(new java.awt.Dimension(130, 116));
-        back.setRolloverEnabled(false);
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
@@ -139,41 +104,44 @@ public class CriminalLog extends javax.swing.JFrame {
         });
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
 
-        punjab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/Lahore-Minar-E-Pakistan-1024x1024.png"))); // NOI18N
+        punjab.setBorderPainted(false);
+        punjab.setContentAreaFilled(false);
         punjab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 punjabActionPerformed(evt);
             }
         });
-        jPanel1.add(punjab, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 220, 180));
+        jPanel1.add(punjab, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 240, 250));
 
-        sindh1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/Karachi-Mazar-E-Quaid-1024x1024.png"))); // NOI18N
+        sindh1.setBorderPainted(false);
+        sindh1.setContentAreaFilled(false);
         sindh1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sindh1ActionPerformed(evt);
             }
         });
-        jPanel1.add(sindh1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 220, 180));
+        jPanel1.add(sindh1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 240, 240));
 
-        balochistan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/balochistanlogo.png"))); // NOI18N
+        balochistan.setBorderPainted(false);
+        balochistan.setContentAreaFilled(false);
         balochistan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 balochistanActionPerformed(evt);
             }
         });
-        jPanel1.add(balochistan, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 240, 220, 180));
+        jPanel1.add(balochistan, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 240, 250));
 
-        kpk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kpk.PNG"))); // NOI18N
+        kpk.setBorderPainted(false);
+        kpk.setContentAreaFilled(false);
         kpk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kpkActionPerformed(evt);
             }
         });
-        jPanel1.add(kpk, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 240, 210, 180));
+        jPanel1.add(kpk, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 210, 250, 250));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel7.setText("KPK Criminals");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 460, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/Criminallog.PNG"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1190, 680));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 650));
 
@@ -273,13 +241,7 @@ public class CriminalLog extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JButton balochistan;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton kpk;
     private javax.swing.JButton punjab;

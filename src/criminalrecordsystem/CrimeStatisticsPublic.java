@@ -216,6 +216,8 @@ public class CrimeStatisticsPublic extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        back.setBackground(new java.awt.Color(255, 255, 255));
+        back.setForeground(new java.awt.Color(255, 255, 255));
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         back.setBorderPainted(false);
         back.setContentAreaFilled(false);
@@ -226,7 +228,7 @@ public class CrimeStatisticsPublic extends javax.swing.JFrame {
         });
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
 
-        jPanel1.setBackground(java.awt.Color.lightGray);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(1300, 650));
         jPanel1.setPreferredSize(new java.awt.Dimension(1300, 650));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -332,7 +334,7 @@ public class CrimeStatisticsPublic extends javax.swing.JFrame {
         jLabel40.setText("BURGLARY");
         jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 430, -1, 20));
 
-        jLabel47.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel47.setBackground(new java.awt.Color(255, 255, 255));
         jLabel47.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabel47.setOpaque(true);
         jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 980, 430));

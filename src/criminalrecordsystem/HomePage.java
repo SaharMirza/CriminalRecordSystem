@@ -66,9 +66,8 @@ public class HomePage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1300, 650));
-        setMinimumSize(new java.awt.Dimension(1300, 650));
-        setPreferredSize(new java.awt.Dimension(1300, 650));
+        setMaximumSize(new java.awt.Dimension(1210, 650));
+        setMinimumSize(new java.awt.Dimension(1210, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(java.awt.Color.lightGray);
@@ -84,7 +83,7 @@ public class HomePage extends javax.swing.JFrame {
                 PublicCrimeLogActionPerformed(evt);
             }
         });
-        jPanel1.add(PublicCrimeLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 220, 210, 200));
+        jPanel1.add(PublicCrimeLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 370, 320));
 
         PublicCrimeStatistics.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         PublicCrimeStatistics.setBorderPainted(false);
@@ -94,7 +93,7 @@ public class HomePage extends javax.swing.JFrame {
                 PublicCrimeStatisticsActionPerformed(evt);
             }
         });
-        jPanel1.add(PublicCrimeStatistics, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 220, 190));
+        jPanel1.add(PublicCrimeStatistics, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 360, 320));
 
         officerLogIn.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         officerLogIn.setBorderPainted(false);
@@ -104,12 +103,12 @@ public class HomePage extends javax.swing.JFrame {
                 officerLogInActionPerformed(evt);
             }
         });
-        jPanel1.add(officerLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 240, 60));
+        jPanel1.add(officerLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, 340, 80));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/WhatsApp Image 2021-12-05 at 8.27.38 PM.jpeg"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 650));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/homescreen.PNG"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 650));
 
         pack();
         setLocationRelativeTo(null);

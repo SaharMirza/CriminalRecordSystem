@@ -141,6 +141,7 @@ class Login extends javax.swing.JFrame {
                 dispose();
                 EditProfile EP = new EditProfile();
                 EP.setID(result.getString("Officer_ID"));
+                EP.setLocationRelativeTo(null);
                 EP.setVisible(true);
 
             } else {
@@ -154,6 +155,7 @@ class Login extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         HomePage HP = new HomePage();
         this.setVisible(false);
+        HP.setLocationRelativeTo(null);
         HP.setVisible(true);
         
     }//GEN-LAST:event_backActionPerformed
@@ -179,29 +181,15 @@ class Login extends javax.swing.JFrame {
             /////// emailing
             String host = "smtp.gmail.com";
             String port = "587";
-            final String username = "bookingcinema3109@gmail.com";
-            final String password = "cinema3109";
+            final String username = "policestationproject@gmail.com";
+            final String password = "PoliceProject";
             String to = EmailAddress;
             String subject = "Password Recovery";
             String message = "Your Password is " + userpassword;
-//            String message
-//                    = "<h1 style=color:green; text-align:center>BOOKING CONFIRMATION</h1>\n\n"
-//                    + "Thank you for booking tickets with E-Cinema! You can see the summary of your booking below." + "\n\n\n\n"
-//                    + "<h3>TICKET DETAILS</h3>" + "\n"
-//                    + "<br><b>Customer Name: </b>" + cus.getName()
-//                    + "<br><b>Customer CNIC: </b>" + cus.getCnic()
-//                    + "<br><b>Movie Show ID: </b>" + m.getId()
-//                    + "<br><b>Movie Title: </b>" + m.getTitle()
-//                    + "<br><b>Hall Category: </b>" + m.getHall()
-//                    + "<br><b>Show Date: </b>" + m.getDate()
-//                    + "<br><b>Show Timing: </b>" + m.getTime()
-//                    + "<br><b>Number of Tickets: </b>" + c
-//                    + "<br><b>Seat Numbers: </b>" + snos
-//                    + "<br><b>Total Amount: </b>" + a;
             
             sendPlainTextEmail(host, port, username, password, to, subject, message);
             //jLabel13.setText("Booking Details have been emailed at:  " + cus.getAddress());
-            System.out.println("Password has been emailed at:  " + EmailAddress);
+            JOptionPane.showMessageDialog(this,"Password has been emailed at:  " + EmailAddress);
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (MessagingException ex) {
