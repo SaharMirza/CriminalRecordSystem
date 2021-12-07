@@ -423,6 +423,7 @@ public class FIR_Records extends javax.swing.JFrame {
         try {
             String id = idtxt.getText();
             firdetails fd = new firdetails(id);
+             fd.setLocationRelativeTo(null);
             this.setVisible(false);
             fd.setVisible(true);
         } catch (SQLException ex) {

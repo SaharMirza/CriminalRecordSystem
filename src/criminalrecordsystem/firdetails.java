@@ -290,6 +290,7 @@ public class firdetails extends javax.swing.JFrame {
 
         CriminalAddress.setBackground(new java.awt.Color(255, 255, 255));
         CriminalAddress.setForeground(new java.awt.Color(255, 255, 255));
+        CriminalAddress.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         CriminalAddress.setBorder(null);
         CriminalAddress.setCaretColor(new java.awt.Color(255, 255, 255));
         CriminalAddress.setDisabledTextColor(new java.awt.Color(0, 0, 0));

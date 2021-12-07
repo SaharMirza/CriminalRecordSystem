@@ -390,7 +390,7 @@ public class CriminalRecords extends javax.swing.JFrame {
             pst2.setString(2, id);
             int s = pst2.executeUpdate();
 
-            System.out.println("updated");
+            JOptionPane.showMessageDialog(this, "Updated!");
         } catch (SQLException ex) {
             Logger.getLogger(CriminalRecords.class.getName()).log(Level.SEVERE, null, ex);
         }

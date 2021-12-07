@@ -35,7 +35,7 @@ public class CriminalInfo extends javax.swing.JFrame {
     public CriminalInfo() throws SQLException {
         initComponents();
         scaleimage();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+       // setExtendedState(JFrame.MAXIMIZED_BOTH);
         Connect();
         dropdown();
 
