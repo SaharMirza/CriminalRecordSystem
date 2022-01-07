@@ -346,6 +346,7 @@ public class firdetails extends javax.swing.JFrame {
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         try {
             FIR_Records FR = new FIR_Records();
+            FR.setLocationRelativeTo(null);
             this.setVisible(false);
             FR.setVisible(true);
         } catch (SQLException ex) {

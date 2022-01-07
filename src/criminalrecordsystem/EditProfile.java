@@ -30,14 +30,13 @@ public class EditProfile extends javax.swing.JFrame {
      */
     public EditProfile() throws SQLException {
         initComponents();
-        scaleimage();
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
         Connect();
 
     }
 
     Connection conn;
 
+    ////////connection to db 
     public void Connect() throws SQLException {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -47,65 +46,13 @@ public class EditProfile extends javax.swing.JFrame {
                 System.out.println("unable to connect w db");
 
             }
-            System.out.println("connected w db");
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    public void scaleimage() {
-//        ImageIcon icon1=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\editprofile.jpg");
-//        ImageIcon icon2=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\fir form.png");
-//        ImageIcon icon3=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\firRecord.png");
-//        ImageIcon icon4=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\criminalrecord.png");
-//        ImageIcon icon5=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\crimestatistics.png");
-//        ImageIcon icon6=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\police_badge_PNG72.png");
-//        ImageIcon icon7=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\profilepic.jpg");
-//        
-//       //edit profile icon
-//        Image img1=icon1.getImage();
-//        Image imgscale1=img1.getScaledInstance(jLabel17.getWidth(), jLabel17.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledImage1 = new ImageIcon(imgscale1);
-//        jLabel17.setIcon(scaledImage1);
-//        //fir form image
-//        Image img2=icon2.getImage();
-//        Image imgscale2=img2.getScaledInstance(jLabel18.getWidth(), jLabel18.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledImage2 = new ImageIcon(imgscale2);
-//        jLabel18.setIcon(scaledImage2);
-//        //fir record
-//        Image img3=icon3.getImage();
-//        Image imgscale3=img3.getScaledInstance(jLabel19.getWidth(), jLabel19.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledImage3 = new ImageIcon(imgscale3);
-//        jLabel19.setIcon(scaledImage3);
-        //criminal record
-//        Image img4=icon4.getImage();
-//        Image imgscale4=img4.getScaledInstance(jLabel20.getWidth(), jLabel20.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledImage4 = new ImageIcon(imgscale4);
-//        jLabel20.setIcon(scaledImage4);
-//        //criminal statistics
-//        Image img5=icon5.getImage();
-//        Image imgscale5=img5.getScaledInstance(jLabel21.getWidth(), jLabel21.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledImage5 = new ImageIcon(imgscale5);
-//        jLabel21.setIcon(scaledImage5);
-//        // police logo
-//         Image img6=icon6.getImage();
-//        Image imgscale6=img6.getScaledInstance(jLabel16.getWidth(), jLabel16.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledImage6 = new ImageIcon(imgscale6);
-//        jLabel16.setIcon(scaledImage6);
-//        //profile pic
-//        Image img7=icon7.getImage();
-//        Image imgscale7=img7.getScaledInstance(jLabel23.getWidth(), jLabel23.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledImage7 = new ImageIcon(imgscale7);
-//        jLabel23.setIcon(scaledImage7);
-//        //logout
-//        ImageIcon icon90=new ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\CriminalRecordSystem\\images\\logout.png");
-//        Image img90=icon90.getImage();
-//        Image imgscale90=img90.getScaledInstance(jLabel57.getWidth(), jLabel57.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledImage90 = new ImageIcon(imgscale90);
-//        jLabel57.setIcon(scaledImage90);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -358,6 +305,7 @@ public class EditProfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    ////////To show officer details on edit profile page from officer table
     public String setID(String ID) throws SQLException {
         OFFICER_ID = ID;
 
@@ -383,6 +331,7 @@ public class EditProfile extends javax.swing.JFrame {
 
     }
 
+    //////Change officer details 
     private void SaveEditProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveEditProfileActionPerformed
         try {
             // TODO add your handling code here:
@@ -402,6 +351,7 @@ public class EditProfile extends javax.swing.JFrame {
 
             ResultSet rs = statement2.executeQuery();
 
+            ////////Checking if old pass matches pass in db and if new pass matches confirm new pass
             while (rs.next()) {
                 if (rs.getString(1).equals(oldpass) && newpass.equals(confirmpass)) {
                     String sql2 = "update Officer set Password=? where OFFICER_ID=?";
@@ -437,14 +387,7 @@ public class EditProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveEditProfileActionPerformed
 
     private void EditProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditProfileActionPerformed
-//        try {
-//            dispose();
-//            EditProfile e = new EditProfile();
-//            e.setLocationRelativeTo(null);
-//            e.setVisible(true);
-//        } catch (SQLException ex) {
-//            Logger.getLogger(EditProfile.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
     }//GEN-LAST:event_EditProfileActionPerformed
 
     private void FIRFormsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FIRFormsActionPerformed

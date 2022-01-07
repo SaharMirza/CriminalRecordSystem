@@ -43,6 +43,7 @@ class Login extends javax.swing.JFrame {
 
     Connection conn;
 
+    ////////// connection db
     public void Connect() throws SQLException {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -52,7 +53,6 @@ class Login extends javax.swing.JFrame {
                 System.out.println("unable to connect w db");
 
             }
-            System.out.println("connected w db");
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
@@ -60,7 +60,6 @@ class Login extends javax.swing.JFrame {
 
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -69,7 +68,7 @@ class Login extends javax.swing.JFrame {
         jPassword = new javax.swing.JPasswordField();
         Forgetpass = new javax.swing.JButton();
         PoliceID = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        login = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,14 +103,14 @@ class Login extends javax.swing.JFrame {
         });
         getContentPane().add(PoliceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 360, 40));
 
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        login.setBorderPainted(false);
+        login.setContentAreaFilled(false);
+        login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 280, 70));
+        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 280, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/criminalrecordsystem/LoginUI.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -124,10 +123,10 @@ class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PoliceIDActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
 
-        String sql = "SELECT * FROM Officer WHERE Officer_id = ? and password = ?";
+        String sql = "SELECT * FROM Officer WHERE Officer_id = ? and password = ?"; //// checking if officer id and pass match to db
         PreparedStatement statement;
 
         try {
@@ -138,7 +137,7 @@ class Login extends javax.swing.JFrame {
 
             if (result.next()) {
                 id = result.getString("Officer_id");
-                dispose();
+                dispose(); //JFrame window to be destroyed and cleaned up by the operating system
                 EditProfile EP = new EditProfile();
                 EP.setID(result.getString("Officer_ID"));
                 EP.setLocationRelativeTo(null);
@@ -150,35 +149,35 @@ class Login extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_loginActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         HomePage HP = new HomePage();
         this.setVisible(false);
         HP.setLocationRelativeTo(null);
         HP.setVisible(true);
-        
+
     }//GEN-LAST:event_backActionPerformed
 
     private void ForgetpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgetpassActionPerformed
 
-
         try {
             String sql = "SELECT * FROM Officer WHERE Officer_id = ? ";
             PreparedStatement statement;
-            
+
             statement = conn.prepareStatement(sql);
             statement.setString(1, PoliceID.getText());
-           
+
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
                 id = result.getString("Officer_id");
                 userpassword = result.getString("Password");
                 EmailAddress = result.getString("Email_Address");
+            } else {
+                JOptionPane.showMessageDialog(this, "Enter our correct Officer ID");
             }
-            
-            /////// emailing
+            /////// emailing password fetched from database to email of officer
             String host = "smtp.gmail.com";
             String port = "587";
             final String username = "policestationproject@gmail.com";
@@ -186,10 +185,10 @@ class Login extends javax.swing.JFrame {
             String to = EmailAddress;
             String subject = "Password Recovery";
             String message = "Your Password is " + userpassword;
-            
+
             sendPlainTextEmail(host, port, username, password, to, subject, message);
-            //jLabel13.setText("Booking Details have been emailed at:  " + cus.getAddress());
-            JOptionPane.showMessageDialog(this,"Password has been emailed at:  " + EmailAddress);
+            JOptionPane.showMessageDialog(this, "Password has been emailed at:  " + EmailAddress);
+
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (MessagingException ex) {
@@ -223,7 +222,7 @@ class Login extends javax.swing.JFrame {
         InternetAddress[] toAddresses = {new InternetAddress(toAddress)};
         msg.setRecipients(Message.RecipientType.TO, toAddresses);
         msg.setSubject(subject);
-        //msg.setSentDate(new Date());
+       
         // set plain text message
         msg.setText(message);
 
@@ -234,15 +233,6 @@ class Login extends javax.swing.JFrame {
         t.sendMessage(msg, msg.getAllRecipients());
         t.close();
 // * END CHANGE
-
-    
-        
-        
-        
-        
-        
-        
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_ForgetpassActionPerformed
@@ -290,8 +280,8 @@ class Login extends javax.swing.JFrame {
     private javax.swing.JButton Forgetpass;
     private javax.swing.JTextField PoliceID;
     private javax.swing.JButton back;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPassword;
+    private javax.swing.JButton login;
     // End of variables declaration//GEN-END:variables
 }
